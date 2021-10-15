@@ -1,0 +1,20 @@
+{
+    "name": "hraw/httpclient",
+    "description": "A simple and easy to implement wrapper for PHP cURL",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harish Rawat",
+            "email": "harishrawat93@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Curl\\": "src/"
+        }
+    }
+}
