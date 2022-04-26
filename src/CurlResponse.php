@@ -46,7 +46,7 @@ class CurlResponse
      */
     public function data()
     {
-        return json_decode($this->content, false);
+        return $this->content;
     }
 
     /**
