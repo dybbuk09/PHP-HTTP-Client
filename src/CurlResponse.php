@@ -7,12 +7,12 @@ class CurlResponse
     /**
      * Holds api response content
      */
-    private string $content;
+    private $content;
 
     /**
      * Hold properties return by api
      */
-    private array $response;
+    private $response;
 
     public function __construct(string $content, array $response)
     {
@@ -23,7 +23,7 @@ class CurlResponse
     /**
      * @return bool
      */
-    public function success(): bool
+    public function success()
     {
         if(in_array($this->response['http_code'], range(200, 206))) {
             return true;
@@ -35,7 +35,7 @@ class CurlResponse
      * Return status code
      * @return int
      */
-    public function statusCode(): int
+    public function statusCode()
     {
         return $this->response['http_code'];
     }
@@ -53,7 +53,7 @@ class CurlResponse
      * Return all properties returned by api
      * @return array
      */
-    public function properties(): array
+    public function properties()
     {
         return $this->response;
     }

@@ -1,10 +1,10 @@
-## PHP HTTP Client
+## PHP Curl/HTTP Client
 
 A simple and easy to implement wrapper for PHP cURL.
 
 ### Requirements
 
-- PHP 7.4 or higher
+- PHP 7.0 or higher
 - Composer for installation
 
 ### Supported Methods:

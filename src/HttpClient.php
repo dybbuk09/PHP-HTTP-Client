@@ -10,17 +10,17 @@ class HttpClient
     /**
      * Holds the instance of the class
      */
-    private static ?object $instance = null;
+    private static $instance = null;
 
     /**
      * Holds the request url
      */
-    private static string $url;
+    private static $url;
 
     /**
      * Holds the request method
      */
-    private static string $method = 'GET';
+    private static $method = 'GET';
 
     /**
      * Holds the payload of the request
@@ -30,18 +30,18 @@ class HttpClient
     /**
      * Holds the request timeout value
      */
-    private int $timeout = 30;
+    private $timeout = 30;
 
     /**
      * Holds the request headers
      */
-    private array $headers = [];
+    private $headers = [];
 
     /**
      * Return the instance of the class using singleton pattern
      * @return object
      */
-    public static function instance(): object
+    public static function instance()
     {
         if(is_null(self::$instance)) {
             self::$instance = new self();
@@ -54,7 +54,7 @@ class HttpClient
      * @param string $url
      * @return object
      */
-    public static function get(string $url): object
+    public static function get($url)
     {
         self::$url = $url;
         return self::instance();
@@ -66,7 +66,7 @@ class HttpClient
      * @param $payload
      * @return object
      */
-    public static function post(string $url, $payload): object
+    public static function post($url, $payload)
     {
         self::$url = $url;
         self::$payload = $payload;
@@ -80,7 +80,7 @@ class HttpClient
      * @param $payload
      * @return object
      */
-    public static function put(string $url, $payload): object
+    public static function put($url, $payload)
     {
         self::$url = $url;
         self::$payload = $payload;
@@ -94,7 +94,7 @@ class HttpClient
      * @param $payload
      * @return object
      */
-    public static function patch(string $url, $payload): object
+    public static function patch($url, $payload)
     {
         self::$url = $url;
         self::$payload = $payload;
@@ -107,7 +107,7 @@ class HttpClient
      * @param string $url
      * @return object
      */
-    public function delete(string $url): object
+    public function delete($url)
     {
         self::$url = $url;
         self::$method = 'DELETE';
@@ -119,7 +119,7 @@ class HttpClient
      * @param int $timeout
      * @return object
      */
-    public function timeout(int $timeout): object
+    public function timeout($timeout)
     {
         $this->timeout = $timeout;
         return self::instance();
@@ -130,7 +130,7 @@ class HttpClient
      * @param array $headers
      * @return object
      */
-    public function headers(array $headers): object
+    public function headers($headers)
     {
         $this->headers = $headers;
         return self::instance();
@@ -141,7 +141,7 @@ class HttpClient
      * @return \Curl\CurlResponse
      * @throws Exception
      */
-    public function send(): CurlResponse
+    public function send()
     {
         $ch = curl_init();
         curl_setopt( $ch, CURLOPT_URL, self::$url );

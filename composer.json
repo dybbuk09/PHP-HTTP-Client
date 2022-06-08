@@ -2,6 +2,12 @@
     "name": "hraw/httpclient",
     "description": "A simple and easy to implement wrapper for PHP cURL",
     "type": "library",
+    "keywords": [
+        "http client",
+        "curl",
+        "curl library",
+        "PHP curl"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -10,7 +16,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4"
+        "php": ">=7.0"
     },
     "autoload": {
         "psr-4": {
